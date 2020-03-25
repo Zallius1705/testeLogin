@@ -1,5 +1,7 @@
 package com.dev.republica.config;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,7 +20,7 @@ public class AutenticacaoService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-		Usuario usuario = usuarioRepository.findByUsername(username);
+		Optional<Usuario> usuario = usuarioRepository.findByUsername(username);
 		
 		if (usuario.isPresent()) {
 			return usuario.get();

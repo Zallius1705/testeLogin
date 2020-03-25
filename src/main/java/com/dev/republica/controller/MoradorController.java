@@ -20,7 +20,7 @@ import com.dev.republica.service.MoradorService;
 @RequestMapping("/moradores")
 @CrossOrigin//(origins = "http://localhost:4200")
 public class MoradorController {
-
+	
 	private MoradorService moradorService;
 
 	public MoradorController(MoradorService moradorService) {
